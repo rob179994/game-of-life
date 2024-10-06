@@ -8,6 +8,9 @@ data class Board(private val xSize: Int, private val ySize: Int, private val sta
 
     private fun isAlive(point: Pair<Int,Int>): Boolean = points[point] ?: false
 
+    /**
+     * Iterate points on the board, print the board and store useful stats
+     */
     fun iterate(): Board {
         println(toString())
         points = iteratePoints()
@@ -15,6 +18,9 @@ data class Board(private val xSize: Int, private val ySize: Int, private val sta
         return this
     }
 
+    /**
+     * One iteration of the board in which all points are individually iterated
+     */
     private fun iteratePoints(): Map<Pair<Int, Int>, Boolean> {
         val points: MutableMap<Pair<Int, Int>, Boolean> = mutableMapOf()
         (0..<ySize).forEach {yPoint ->
@@ -27,6 +33,9 @@ data class Board(private val xSize: Int, private val ySize: Int, private val sta
         return points
     }
 
+    /**
+     * Iterates a single point on a board i.e. returns true or false to signify enabling of the point
+     */
     private fun iteratePoint(point: Pair<Int,Int>): Boolean{
         val isAlive = isAlive(point)
         var aliveNeighbourCount = 0
@@ -49,7 +58,9 @@ data class Board(private val xSize: Int, private val ySize: Int, private val sta
                 !isAlive && aliveNeighbourCount == 3
     }
 
-
+    /**
+     * The string representation of the board as a whole including a summary of the stats
+     */
     override fun toString(): String = """
 ------------------------------------------------------------
 Iteration: $iteration. Grid size of x: $xSize and y: $ySize
@@ -59,6 +70,9 @@ ${elementString()}
 
         """.trimIndent()
 
+    /**
+     * The string representation of all the points on the board
+     */
     private fun elementString(): String {
         var elementString = ""
         (0..<ySize).forEach {yPoint ->

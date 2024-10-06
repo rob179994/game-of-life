@@ -1,7 +1,6 @@
 package com.freshmanstudios
 
 import com.freshmanstudios.board.BoardPreset
-import com.freshmanstudios.extension.wrap
 
 fun main() {
     val iterations = 5

@@ -1,5 +1,8 @@
 package com.freshmanstudios.board
 
+/**
+ * Some standard periodic presets for the board configurations. More could be added
+ */
 enum class BoardPreset(val board: Board) {
     BLINKER(
         board = Board(
