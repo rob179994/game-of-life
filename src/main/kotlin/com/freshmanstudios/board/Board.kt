@@ -63,9 +63,13 @@ data class Board(private val xSize: Int, private val ySize: Int, private val sta
      */
     override fun toString(): String = """
 ------------------------------------------------------------
-Iteration: $iteration. Grid size of x: $xSize and y: $ySize
+------------------------------------------------------------
+Summary:
+- Iteration: $iteration
+- Grid size of $xSize (x) by $ySize (y)
 ------------------------------------------------------------
 ${elementString()}
+------------------------------------------------------------
 ------------------------------------------------------------
 
         """.trimIndent()

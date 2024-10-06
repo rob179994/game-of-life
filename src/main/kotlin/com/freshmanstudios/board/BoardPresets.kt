@@ -32,5 +32,23 @@ enum class BoardPreset(val board: Board) {
                 Pair(3,4), Pair(4,4)
             )
         )
+    ),
+    PENTADECATHLON(
+        board = Board(
+            xSize = 15,
+            ySize = 18,
+            startingPoints = listOf(
+                Pair(7,4),
+                Pair(7,5),
+                Pair(6,6), Pair(8,6),
+                Pair(7,7),
+                Pair(7,8),
+                Pair(7,9),
+                Pair(7,10),
+                Pair(6,11), Pair(8,11),
+                Pair(7,12),
+                Pair(7,13),
+            )
+        )
     )
 }
